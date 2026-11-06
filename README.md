@@ -1,36 +1,271 @@
 # 👻 Study Boss Battle
 
-Turn your study notes into a monster battle!
-Upload a PDF, and an open-source AI makes quiz questions from it.
-Answer right to hurt the monster. Answer wrong and you lose health.
+> **Turn your study notes into an AI-powered boss battle! ⚔️**
 
-Built for the Hacktoberfest 2026 Open-Source AI Challenge (Week 4).
+Study Boss Battle is an interactive learning application that converts your **PDF study notes into AI-generated quiz questions** and turns them into a fun boss fight.
 
-## How it works
+Instead of simply reading notes and taking a boring quiz, you fight a virtual boss by answering questions correctly. 🎮
 
-1. Upload your notes as a PDF.
-2. The AI (gpt-oss, an open-weight model) makes 3 quiz questions.
-3. The monster and you both start with 90 HP.
-4. Right answer: the monster loses 30 HP.
-5. Wrong answer: you lose 30 HP.
-6. Defeat the monster to win!
+---
 
-## Why open source?
+## 🎮 How It Works
 
-- The model is open-weight, so I can swap it for another one easily.
-- My notes are private, so I want control over where they go.
+```text
+📄 Upload Study Notes
+        ↓
+🧠 AI Reads Your Notes
+        ↓
+❓ AI Generates Quiz Questions
+        ↓
+👹 Boss Is Summoned
+        ↓
+⚔️ Answer Questions
+        ↓
+💥 Correct Answer → Damage the Boss
+❌ Wrong Answer → Lose HP
+        ↓
+🏆 Get Your Final Score
+```
 
-## Run it yourself
+---
 
-1. Install the tools:
-   `pip install -r requirements.txt`
-2. Save your Ollama API key as an environment variable named `OLLAMA_API_KEY`.
-3. Start the app:
-   `python -m streamlit run app.py`
+## ✨ Features
 
-## Built with
+### 📚 AI-Powered Quiz Generation
+Upload a PDF and the application automatically creates questions based on your study material.
 
-- Python
-- Streamlit
-- pypdf
-- Ollama (gpt-oss:120b)
+### 🎯 Multiple Difficulty Levels
+
+Choose the difficulty that matches your preparation:
+
+- 🟢 **Easy** — Basic concepts and definitions
+- 🟡 **Medium** — Concept-based questions
+- 🔴 **Hard** — More challenging questions
+
+### ❓ Flexible Number of Questions
+
+Choose how many questions you want:
+
+- 5 Questions
+- 10 Questions
+- 20 Questions
+
+### 👹 Boss Battles
+
+Every study session becomes a battle against an AI-generated boss.
+
+The boss has:
+
+- ❤️ Health Points
+- 👹 A unique name
+- 📖 A description related to your study topic
+
+### ⚔️ Battle System
+
+Answer questions to attack the boss.
+
+```text
+✅ Correct Answer
+       ↓
+⚔️ Attack Boss
+       ↓
+💥 Boss loses HP
+
+❌ Wrong Answer
+       ↓
+👹 Boss attacks
+       ↓
+❤️ You lose HP
+```
+
+### 🔥 Combo System
+
+Answer consecutive questions correctly to build your combo.
+
+### 💡 Explanations
+
+After answering, the application provides an explanation so you can understand **why the answer is correct**.
+
+### 🏆 Final Results
+
+At the end of the battle, you can see:
+
+- Accuracy
+- Correct answers
+- Wrong answers
+- Score
+- Best combo
+- Remaining player HP
+- Remaining boss HP
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| 🐍 Python | Application logic |
+| 🎈 Streamlit | Web interface |
+| 🧠 Ollama | AI question generation |
+| 📄 pypdf | PDF text extraction |
+
+---
+
+## 📂 Project Structure
+
+```text
+study-boss-battle/
+│
+├── app.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Mehak-Kuchchal/study-boss-battle.git
+```
+
+### 2. Open the project
+
+```bash
+cd study-boss-battle
+```
+
+### 3. Install the required packages
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Set up your Ollama API key
+
+The application uses an Ollama API key to generate quiz questions.
+
+**Do not put your API key directly inside `app.py` or commit it to GitHub.**
+
+Set it as an environment variable on your computer.
+
+### 5. Run the application
+
+```bash
+streamlit run app.py
+```
+
+The application will open in your browser.
+
+---
+
+## 🔐 Security
+
+Your API key should be stored securely as an environment variable or through your deployment platform's secrets manager.
+
+Never commit secrets such as:
+
+```text
+OLLAMA_API_KEY=your-secret-key
+```
+
+to a public GitHub repository.
+
+---
+
+## 🎯 Example
+
+Imagine you upload:
+
+```text
+📄 Computer Networks - Unit 3.pdf
+```
+
+The application can generate a battle such as:
+
+```text
+👹 Router Rex
+
+"Master of packets, routing through
+subnets and virtual circuits!"
+
+Question 1:
+
+What is the primary function
+of the network layer?
+
+A. Moving frames between devices
+B. Delivering packets end-to-end
+C. Encrypting data
+D. Providing power to routers
+```
+
+Answer correctly:
+
+```text
+⚔️ CRITICAL HIT!
+
+💥 You dealt damage!
+🔥 Combo increased!
+```
+
+At the end:
+
+```text
+🏆 BATTLE COMPLETE
+
+Accuracy: 80%
+Correct: 8
+Wrong: 2
+Score: 800
+```
+
+---
+
+## 💡 Why Study Boss Battle?
+
+Traditional studying can become repetitive.
+
+Study Boss Battle combines:
+
+**📚 Learning + 🧠 AI + 🎮 Gamification**
+
+to make revision more interactive and engaging.
+
+The goal is simple:
+
+> **Don't just study your notes. Fight them. ⚔️**
+
+---
+
+## 🚀 Future Improvements
+
+Planned improvements include:
+
+- 📊 Study progress dashboard
+- 📈 Performance tracking
+- 🏆 Achievements and badges
+- 🔥 Study streaks
+- 🧠 Weak-topic detection
+- 📚 Practice mode
+- 🎮 More boss types
+- 🖼️ Custom boss artwork
+- 📱 Improved mobile experience
+
+---
+
+## 👩‍💻 Author
+
+**Mehak Kuchchal**
+
+B.Tech Computer Science & Engineering
+
+---
+
+## ⭐ Support
+
+If you find this project useful, consider giving the repository a ⭐ on GitHub!
+
+**Happy studying — and good luck defeating the boss! 👻⚔️**
